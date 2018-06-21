@@ -31,7 +31,7 @@ notesRouter.get('/:id', async (request, response) => {
 
   } catch (exception) {
     console.log(exception)
-    response.status(400).send({ error: 'malformatted id' })
+    response.status(400).json({ error: 'malformatted id' })
   }
 })
 
@@ -42,7 +42,7 @@ notesRouter.delete('/:id', async (request, response) => {
     response.status(204).end()
   } catch (exception) {
     console.log(exception)
-    response.status(400).send({ error: 'malformatted id' })
+    response.status(400).json({ error: 'malformatted id' })
   }
 })
 
@@ -101,7 +101,7 @@ notesRouter.put('/:id', (request, response) => {
     })
     .catch(error => {
       console.log(error)
-      response.status(400).send({ error: 'malformatted id' })
+      response.status(400).json({ error: 'malformatted id' })
     })
 })
 
